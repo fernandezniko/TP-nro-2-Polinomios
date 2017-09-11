@@ -82,9 +82,9 @@ public class Polinomio {
 			return x ;
 		
 		if(grado%2 == 0)
-			r = potencia(x, grado/2 ) ;
+			r = potenciaP(x, grado/2 ) ;
 		else
-			r = x*potencia(x, grado-1 ) ;
+			r = x*potenciaP(x, grado-1 ) ;
 		
 		return r ;
 	}
