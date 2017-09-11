@@ -32,16 +32,61 @@ public class Polinomio {
 	public double evaluarRecursiva (double x ) { 
 		
 		double resultado=0.0 ;
+		int longitud = this.grado ;
+		int aux = this.grado ;
 		
-		return resultado ; 
+		for(int i=0 ; i<longitud ; i++){
+			
+			resultado += this.coeficientes[i] * potencia(x,aux) ;
+			aux-- ;
+		}
+		resultado += this.coeficientes[this.grado] ;
+		
+		return resultado ;
 	}   
+	
+	public double potencia(double x , int grado){
+		
+		double r ;
+		
+		if(grado==1)
+			return x ;
+		
+		r = x*potencia(x , grado-1);
+		
+		return r ;
+	}
 	
 	public double evaluarRecursivaPar (double x ) { 
 		
 		double resultado=0.0 ;
+		int longitud = this.grado ;
+		int aux = this.grado ;
+		
+		for(int i=0 ; i<longitud ; i++){
+			
+			resultado += this.coeficientes[i] * potencia(x,aux) ;
+			aux-- ;
+		}
+		resultado += this.coeficientes[this.grado] ;
 		
 		return resultado ;
 		
+	}
+	
+	public double potenciaP (double x, int grado){
+		
+		double r ;
+		
+		if(grado == 1)
+			return x ;
+		
+		if(grado%2 == 0)
+			r = potencia(x, grado/2 ) ;
+		else
+			r = x*potencia(x, grado-1 ) ;
+		
+		return r ;
 	}
 	
 	public double evaluarProgDinamica (double x ) {
@@ -79,14 +124,14 @@ public class Polinomio {
 	
 	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		
-		
+
 		int grado=2;
-		double[] coef= new double[] {1,2,3};
+		double[] coef= new double[] {4,2,8};
 		Polinomio pol=new Polinomio(grado, coef);
 		double res=pol.evaluarMSucesivas(2);
 		System.out.println(res);
+		System.out.println(pol.evaluarRecursiva(2));
+		System.out.println(pol.evaluarRecursivaPar(2));
 	}
 
 }
