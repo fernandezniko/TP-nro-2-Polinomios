@@ -127,14 +127,46 @@ public class Polinomio {
 
 	public static void main(String[] args) {
 
-		int grado = 2;
-		double[] coef = new double[] { 4, 2, 8 };
+		int grado = 18;
+		long inicio;
+		long fin;
+		
+		double[] coef = new double[] { 4, 2, 8, 6, 12, 3, 2.6, 4, 0, 1,3,-5,9 ,14 ,0 , 12 ,-1, 4 , 3   };
 		Polinomio pol = new Polinomio(grado, coef);
-		double res = pol.evaluarMSucesivas(2);
-		System.out.println(res);
+		
+		inicio=System.currentTimeMillis();
+		
+		for(int i=0; i<9999; i++)
+			pol.evaluarMSucesivas(2);
+		System.out.println(pol.evaluarMSucesivas(2));
+		fin=System.currentTimeMillis();
+		System.out.println("10000 veces Sumas sucesivas Tardo "+(fin-inicio)+" milisegundos");
+		
+		inicio=System.currentTimeMillis();
+		for(int i=0; i<9999; i++)
+			pol.evaluarRecursiva(2);
 		System.out.println(pol.evaluarRecursiva(2));
+		fin=System.currentTimeMillis();
+		System.out.println("10000 veces Recursiva Tardo "+(fin-inicio)+" milisegundos");
+		
+		inicio=System.currentTimeMillis();
+		for(int i=0; i<9999; i++)
+			pol.evaluarRecursivaPar(2);	
 		System.out.println(pol.evaluarRecursivaPar(2));
+		fin=System.currentTimeMillis();
+		System.out.println("10000 veces RecursivaPar Tardo "+(fin-inicio)+" milisegundos");
+		
+		inicio=System.currentTimeMillis();
+		for(int i=0; i<9999; i++)
+			pol.evaluarHorner(2);
 		System.out.println(pol.evaluarHorner(2));
+		fin=System.currentTimeMillis();
+		System.out.println("10000 veces Algoritmo de Horner Tardo "+(fin-inicio)+" milisegundos");
 	}
 
 }
+
+
+
+
+
