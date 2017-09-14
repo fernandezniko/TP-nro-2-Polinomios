@@ -9,8 +9,6 @@ public class BinomioDeNewton {
 	
 	public double factorial(int n){
 		
-		double res = 0 ;
-		
 		if(n == 0)
 			return 1 ;
 		else
@@ -27,11 +25,10 @@ public class BinomioDeNewton {
 		
 	}
 	
-	public double obtenerCoeficiente(){
-		double res=0;
+	
+	public double obtenerCoeficiente(int k){	
 		
-		
-		
-		return res;
+		return (factorial(this.n) / (factorial(k) * (factorial(this.n-k) ))) * Math.pow(this.ax,k) * Math.pow(this.b, this.n-k);
+	
 	}
 }
