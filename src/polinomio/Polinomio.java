@@ -29,6 +29,25 @@ public class Polinomio {
 
 	}
 
+	
+	
+	public double evaluarPow(double x) {
+
+		int longitud = this.grado;
+		double acum = 0;
+		double auxPotencia = 1;
+		for (int i = 0; i <= longitud; i++) {
+			auxPotencia=Math.pow(x, longitud-i);
+			auxPotencia *= (this.coeficientes[i]);
+			acum += auxPotencia;
+			auxPotencia = 1;
+		}
+
+		return acum;
+
+	}
+	
+	
 	public double evaluarRecursiva(double x) {
 
 		double resultado = 0.0;
@@ -89,29 +108,39 @@ public class Polinomio {
 		return r;
 	}
 
-	public double evaluarProgDinamica(double x) {
+	public double evaluarProgDinamica(double x) {///metodo buttom up
 
-		double resultado = 0.0;
+		double[] vect=new double[this.grado+1];
+		vect[0]=1;
+		for (int i=1;i<this.grado+1;i++){
+			vect[i]=vect[i-1]*x;
+		}
+		int longitud = this.grado;
+		double acum = 0;
+		double auxPotencia = 1;
+		for (int i = 0; i <= longitud; i++) {
+			auxPotencia=vect[this.grado-i];
+			auxPotencia *= (this.coeficientes[i]);
+			acum += auxPotencia;
+			auxPotencia = 1;
+		}
 
-		return resultado;
-
+		return acum;
 	}
 
 	public double evaluarMejorada(double x) {
 
-		double resultado = 0.0;
-
-		return resultado;
-
+		double[] vect=new double[this.grado+1];
+		vect[0]=1;
+		for (int i=1;i<this.grado+1;i++)
+			vect[i]=vect[i-1]*x;
+		double acum = 0;
+		for (int i = 0; i <= this.grado; i++)
+			acum+=vect[this.grado-i]* (this.coeficientes[i]);
+		return acum;
 	}
 
-	public double evaluarPow(double x) {
-
-		double resultado = 0.0;
-
-		return resultado;
-
-	}
+	
 
 	// y a s u g e r e n c i a de Lucas P
 	public double evaluarHorner(double x) {
@@ -131,37 +160,77 @@ public class Polinomio {
 		long inicio;
 		long fin;
 		
-		double[] coef = new double[] { 4, 2, 8, 6, 12, 3, 2.6, 4, 0, 1,3,-5,9 ,14 ,0 , 12 ,-1, 4 , 3   };
+		double[] coef = new double[] { 4, 2, 8, 6, 12, 3, 2.6, 4, 0, 1, 3, -5, 9, 14, 0, 12 ,-1, 4 , 3   };
 		Polinomio pol = new Polinomio(grado, coef);
 		
+	
 		inicio=System.currentTimeMillis();
-		
-		for(int i=0; i<9999; i++)
-			pol.evaluarMSucesivas(2);
-		System.out.println(pol.evaluarMSucesivas(2));
-		fin=System.currentTimeMillis();
-		System.out.println("10000 veces Sumas sucesivas Tardo "+(fin-inicio)+" milisegundos");
-		
-		inicio=System.currentTimeMillis();
-		for(int i=0; i<9999; i++)
+		for(int i=0; i<999999; i++)
 			pol.evaluarRecursiva(2);
 		System.out.println(pol.evaluarRecursiva(2));
 		fin=System.currentTimeMillis();
-		System.out.println("10000 veces Recursiva Tardo "+(fin-inicio)+" milisegundos");
+		System.out.println("1000000 veces Recursiva Tardo "+(fin-inicio)+" milisegundos");
 		
 		inicio=System.currentTimeMillis();
-		for(int i=0; i<9999; i++)
+		for(int i=0; i<999999; i++)
 			pol.evaluarRecursivaPar(2);	
 		System.out.println(pol.evaluarRecursivaPar(2));
 		fin=System.currentTimeMillis();
-		System.out.println("10000 veces RecursivaPar Tardo "+(fin-inicio)+" milisegundos");
+		System.out.println("1000000 veces RecursivaPar Tardo "+(fin-inicio)+" milisegundos");
 		
 		inicio=System.currentTimeMillis();
-		for(int i=0; i<9999; i++)
+		for(int i=0; i<999999; i++)
 			pol.evaluarHorner(2);
 		System.out.println(pol.evaluarHorner(2));
 		fin=System.currentTimeMillis();
-		System.out.println("10000 veces Algoritmo de Horner Tardo "+(fin-inicio)+" milisegundos");
+		System.out.println("1000000 veces Algoritmo de Horner Tardo "+(fin-inicio)+" milisegundos");
+		
+		inicio=System.currentTimeMillis();
+		for(int i=0; i<999999; i++)
+			pol.evaluarPow(2);
+		System.out.println(pol.evaluarPow(2));
+		fin=System.currentTimeMillis();
+		System.out.println("1000000 veces evaluarPow Tardo "+(fin-inicio)+" milisegundos");
+		
+		inicio=System.currentTimeMillis();
+		for(int i=0; i<999999; i++)
+			pol.evaluarMSucesivas(2);
+		System.out.println(pol.evaluarMSucesivas(2));
+		fin=System.currentTimeMillis();
+		System.out.println("1000000 veces Multiplicaciones sucesivas Tardo "+(fin-inicio)+" milisegundos");
+	
+		inicio=System.currentTimeMillis();
+		for(int i=0; i<999999; i++)
+			pol.evaluarProgDinamica(2);
+		System.out.println(pol.evaluarProgDinamica(2));
+		fin=System.currentTimeMillis();
+		System.out.println("1000000 veces evaluarProgDinamica Tardo "+(fin-inicio)+" milisegundos");
+	
+		inicio=System.currentTimeMillis();
+		for(int i=0; i<999999; i++)
+			pol.evaluarMejorada(2);
+		System.out.println(pol.evaluarMejorada(2));
+		fin=System.currentTimeMillis();
+		System.out.println("1000000 veces evaluarMejorada Tardo "+(fin-inicio)+" milisegundos");
+	
+		BinomioDeNewton bin=new BinomioDeNewton(1, 1, 3);
+		
+		System.out.println(bin.obtenerCoeficiente(3));
+		
+		double[] coefi;
+		
+		coefi=bin.desarrollarPolinomio();
+		for(int i=0;i<coefi.length;i++) {
+			System.out.print(coefi[i]+" ");
+		}
+		
+		BinomioDeNewton bin2=new BinomioDeNewton(2, 4, 3);
+		System.out.println();
+		coefi=bin2.desarrollarPolinomio();
+		for(int i=0;i<coefi.length;i++) {
+			System.out.print(coefi[i]+" ");
+		}
+		
 	}
 
 }
