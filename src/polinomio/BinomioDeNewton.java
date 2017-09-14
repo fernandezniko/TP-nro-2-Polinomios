@@ -27,6 +27,7 @@ public class BinomioDeNewton {
 		
 		return (factorial(this.n) / (factorial(k) * (factorial(this.n-k) ))) * Math.pow(this.ax,k) * Math.pow(this.b, this.n-k);
 	
+
 	}
 	
 	
@@ -44,4 +45,7 @@ public class BinomioDeNewton {
 	
 	
 	
-}
+
+	}///niko de la b
+
+
