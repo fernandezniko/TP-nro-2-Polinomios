@@ -19,16 +19,13 @@ public class BinomioDeNewton {
 	public BinomioDeNewton(double ax, double b, int n){
 		this.ax=ax;
 		this.b=b;
-		this.n=n;
-							
-		
-		
+		this.n=n;		
 	}
-	
+	/* 213*/
 	
 	public double obtenerCoeficiente(int k){	
 		
 		return (factorial(this.n) / (factorial(k) * (factorial(this.n-k) ))) * Math.pow(this.ax,k) * Math.pow(this.b, this.n-k);
 	
-	}
+	}///niko de la b
 }
