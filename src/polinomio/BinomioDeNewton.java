@@ -40,7 +40,10 @@ public class BinomioDeNewton {
 		return coef;
 	}
 	
-	
+	public double evaluarEnX(double x){
+		return Math.pow(this.ax*x+this.b,this.n);
+		
+	}
 	
 	
 	

@@ -167,50 +167,50 @@ public class Polinomio {
 	
 		inicio=System.currentTimeMillis();
 		for(int i=0; i<999999; i++)
-			pol.evaluarRecursiva(2);
-		System.out.println(pol.evaluarRecursiva(2));
+			pol.evaluarRecursiva(10000);
+		System.out.println(pol.evaluarRecursiva(10000));
 		fin=System.currentTimeMillis();
 		System.out.println("1000000 veces Recursiva Tardo "+(fin-inicio)+" milisegundos");
 		
 		inicio=System.currentTimeMillis();
 		for(int i=0; i<999999; i++)
-			pol.evaluarRecursivaPar(2);	
-		System.out.println(pol.evaluarRecursivaPar(2));
+			pol.evaluarRecursivaPar(10000);	
+		System.out.println(pol.evaluarRecursivaPar(10000));
 		fin=System.currentTimeMillis();
 		System.out.println("1000000 veces RecursivaPar Tardo "+(fin-inicio)+" milisegundos");
 		
 		inicio=System.currentTimeMillis();
 		for(int i=0; i<999999; i++)
-			pol.evaluarHorner(2);
-		System.out.println(pol.evaluarHorner(2));
+			pol.evaluarHorner(10000);
+		System.out.println(pol.evaluarHorner(10000));
 		fin=System.currentTimeMillis();
 		System.out.println("1000000 veces Algoritmo de Horner Tardo "+(fin-inicio)+" milisegundos");
 		
 		inicio=System.currentTimeMillis();
 		for(int i=0; i<999999; i++)
-			pol.evaluarPow(2);
-		System.out.println(pol.evaluarPow(2));
+			pol.evaluarPow(10000);
+		System.out.println(pol.evaluarPow(10000));
 		fin=System.currentTimeMillis();
 		System.out.println("1000000 veces evaluarPow Tardo "+(fin-inicio)+" milisegundos");
 		
 		inicio=System.currentTimeMillis();
 		for(int i=0; i<999999; i++)
-			pol.evaluarMSucesivas(2);
-		System.out.println(pol.evaluarMSucesivas(2));
+			pol.evaluarMSucesivas(10000);
+		System.out.println(pol.evaluarMSucesivas(10000));
 		fin=System.currentTimeMillis();
 		System.out.println("1000000 veces Multiplicaciones sucesivas Tardo "+(fin-inicio)+" milisegundos");
 	
 		inicio=System.currentTimeMillis();
 		for(int i=0; i<999999; i++)
-			pol.evaluarProgDinamica(2);
-		System.out.println(pol.evaluarProgDinamica(2));
+			pol.evaluarProgDinamica(10000);
+		System.out.println(pol.evaluarProgDinamica(10000));
 		fin=System.currentTimeMillis();
 		System.out.println("1000000 veces evaluarProgDinamica Tardo "+(fin-inicio)+" milisegundos");
 	
 		inicio=System.currentTimeMillis();
 		for(int i=0; i<999999; i++)
-			pol.evaluarMejorada(2);
-		System.out.println(pol.evaluarMejorada(2));
+			pol.evaluarMejorada(10000);
+		System.out.println(pol.evaluarMejorada(10000));
 		fin=System.currentTimeMillis();
 		System.out.println("1000000 veces evaluarMejorada Tardo "+(fin-inicio)+" milisegundos");
 	
@@ -231,6 +231,15 @@ public class Polinomio {
 		for(int i=0;i<coefi.length;i++) {
 			System.out.print(coefi[i]+" ");
 		}
+		
+		Polinomio pol32=new Polinomio(3, coef);
+		pol32.coeficientes=bin2.desarrollarPolinomio();
+		System.out.println("\n"+bin2.evaluarEnX(5));
+		System.out.println(pol32.evaluarHorner(5));
+		
+		
+		
+		
 		
 	}
 

@@ -1,0 +1,84 @@
+[33mcommit 9fe96c0364a6c712b0f46aed9d8c68646aa8c63c[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Merge: c556cbc 4624d8f
+Author: Franco David Blanco <riddid117@hotmail.com>
+Date:   Thu Sep 14 20:19:24 2017 -0300
+
+    Desarrollo del polinomio de Newton
+
+[33mcommit c556cbca25e741689ca092538169048d9a13d399[m
+Author: Franco David Blanco <riddid117@hotmail.com>
+Date:   Thu Sep 14 20:12:26 2017 -0300
+
+    Desarrollar polinomio de Newton
+
+[33mcommit 4624d8f0c6cb4ceb8fe49ecce8b81877fbc267b0[m
+Author: niko de la b <valeria.ayelen@gmail.com>
+Date:   Thu Sep 14 10:24:52 2017 -0300
+
+    prueba cambio de nombre
+
+[33mcommit 41d1177a76c9978c9ea2dbc5d0ed6410d199f38c[m
+Author: Valeria Silvestri <valeria.ayelen@gmail.com>
+Date:   Thu Sep 14 10:19:22 2017 -0300
+
+    Obtener coeficiente k
+
+[33mcommit e923e760b930f9d22202c77a95ab59b41278c2b2[m
+Author: Valeria Silvestri <valeria.ayelen@gmail.com>
+Date:   Thu Sep 14 10:06:10 2017 -0300
+
+    Binomio
+
+[33mcommit 40b571a602dcef9b74a5789800080ce4cddad4db[m
+Author: Franco David Blanco <riddid117@hotmail.com>
+Date:   Wed Sep 13 20:44:34 2017 -0300
+
+    Medicion de tiempos de ejecucion
+
+[33mcommit 4b5d6d03efe6965e9a22b7de30ad6e70caeac317[m
+Author: Franco David Blanco <riddid117@hotmail.com>
+Date:   Wed Sep 13 20:10:42 2017 -0300
+
+    implementacion del algoritmo de Horner
+
+[33mcommit 187a68a1bb334dfb17582aa0f6c7674747c52c98[m
+Author: Nicolas Fernandez <ni.ko94@hotmail.com>
+Date:   Mon Sep 11 20:35:27 2017 -0300
+
+    evaluar recursiva par
+
+[33mcommit 1ded2d99d1a61f20432a947e2fff83141f3ce580[m
+Author: Nicolas Fernandez <ni.ko94@hotmail.com>
+Date:   Mon Sep 11 20:31:27 2017 -0300
+
+    evaluar recursiva
+
+[33mcommit 97d6500a3d78fbcd9137e60707cde54efe35db4e[m
+Author: Alexis Aranda Ocampo <alexis_aranda_ocampo@hotmail.com>
+Date:   Mon Sep 11 13:45:33 2017 -0300
+
+    evaluarMSucesivas
+
+[33mcommit 6bc5e40b3f09429b699fef30eada1a3b989a4f6c[m
+Author: Alexis Aranda Ocampo <alexis_aranda_ocampo@hotmail.com>
+Date:   Mon Sep 11 12:54:57 2017 -0300
+
+    segundo commit
+
+[33mcommit 4daa0e1e8055f1d775b956e1f05ccc8099164cab[m
+Author: Franco <alexis_aranda_ocampo@hotmail.com>
+Date:   Mon Sep 11 12:35:03 2017 -0300
+
+    hola mundo
+
+[33mcommit 92e05ac91b29b060a56510ab3aefdfbcd29341d3[m
+Author: Franco <alexis_aranda_ocampo@hotmail.com>
+Date:   Mon Sep 11 12:33:42 2017 -0300
+
+    segundo cambio
+
+[33mcommit a60d061d0095f307b806784cd24ccc744a06be49[m
+Author: Alexis Aranda Ocampo <alexis_aranda_ocampo@hotmail.com>
+Date:   Mon Sep 11 12:30:00 2017 -0300
+
+    Comienzo de proyecto
