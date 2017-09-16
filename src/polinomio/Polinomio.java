@@ -1,17 +1,40 @@
 
 package polinomio;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Locale;
+import java.util.Scanner;
+
 public class Polinomio {
 
 	private int grado;
 	private double[] coeficientes;
 
-	public Polinomio(int grado, double[] coeficientes) {
+	
+	public Polinomio(String archivoIn) throws FileNotFoundException {
 
-		this.coeficientes = new double[grado + 1];
-		this.coeficientes = coeficientes;
-		this.grado = grado;
+		Scanner sc = new Scanner(new File(archivoIn));
+		sc.useLocale(Locale.ENGLISH);
+		
+		
+		this.grado=sc.nextInt();
+		this.coeficientes=new double[this.grado+1];
+		
+		for(int i=0;i<this.grado+1;i++)   //this.grado + 1 por termino indep
+			this.coeficientes[i] = sc.nextDouble();
+		
+		sc.close();
 	}
+
+	
+//	public Polinomio(int grado, double[] coeficientes) {
+//
+//		this.coeficientes = new double[grado + 1];
+//		this.coeficientes = coeficientes;
+//		this.grado = grado;
+//	}
 
 	public double evaluarMSucesivas(double x) {
 
@@ -155,16 +178,17 @@ public class Polinomio {
 
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 
-		int grado = 18;
 		long inicio;
 		long fin;
 		
-		double[] coef = new double[] { 4, 2, 8, 6, 12, 3, 2.6, 4, 0, 1, 3, -5, 9, 14, 0, 12 ,-1, 4 , 3   };
-		Polinomio pol = new Polinomio(grado, coef);
+		CreaArchivo archivo = new CreaArchivo(20,"polinomio1.in");
+		archivo.crear();
+				
+		Polinomio pol=new Polinomio("polinomio1.in");
 		
-	
+		
 		inicio=System.currentTimeMillis();
 		for(int i=0; i<999999; i++)
 			pol.evaluarRecursiva(2);
@@ -213,24 +237,27 @@ public class Polinomio {
 		System.out.println(pol.evaluarMejorada(2));
 		fin=System.currentTimeMillis();
 		System.out.println("1000000 veces evaluarMejorada Tardo "+(fin-inicio)+" milisegundos");
-	
-		BinomioDeNewton bin=new BinomioDeNewton(1, 1, 3);
 		
-		System.out.println(bin.obtenerCoeficiente(3));
 		
-		double[] coefi;
 		
-		coefi=bin.desarrollarPolinomio();
-		for(int i=0;i<coefi.length;i++) {
-			System.out.print(coefi[i]+" ");
-		}
 		
-		BinomioDeNewton bin2=new BinomioDeNewton(2, 4, 3);
-		System.out.println();
-		coefi=bin2.desarrollarPolinomio();
-		for(int i=0;i<coefi.length;i++) {
-			System.out.print(coefi[i]+" ");
-		}
+//		BinomioDeNewton bin=new BinomioDeNewton(1, 1, 3);
+//		
+//		System.out.println(bin.obtenerCoeficiente(3));
+//		
+//		double[] coefi;
+//		
+//		coefi=bin.desarrollarPolinomio();
+//		for(int i=0;i<coefi.length;i++) {
+//			System.out.print(coefi[i]+" ");
+//		}
+//		
+//		BinomioDeNewton bin2=new BinomioDeNewton(2, 4, 3);
+//		System.out.println();
+//		coefi=bin2.desarrollarPolinomio();
+//		for(int i=0;i<coefi.length;i++) {
+//			System.out.print(coefi[i]+" ");
+//		}
 		
 	}
 
