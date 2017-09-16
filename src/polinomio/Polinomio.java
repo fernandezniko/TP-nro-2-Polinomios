@@ -183,61 +183,67 @@ public class Polinomio {
 		long inicio;
 		long fin;
 		
-		CreaArchivo archivo = new CreaArchivo(20,"polinomio1.in");
+		CreaArchivo archivo = new CreaArchivo(1000,"polinomio1.in");
 		archivo.crear();
 				
 		Polinomio pol=new Polinomio("polinomio1.in");
 		
 		
 		inicio=System.currentTimeMillis();
-		for(int i=0; i<999999; i++)
-			pol.evaluarRecursiva(2);
-		System.out.println(pol.evaluarRecursiva(2));
+		for(int i=0; i<9999; i++)
+			pol.evaluarRecursiva(0.0001);
+		//System.out.println(pol.evaluarRecursiva(0.0001));
 		fin=System.currentTimeMillis();
-		System.out.println("1000000 veces Recursiva Tardo "+(fin-inicio)+" milisegundos");
+		//System.out.println("1000000 veces Recursiva Tardo "+(fin-inicio)+" milisegundos");
+		System.out.println(fin-inicio);
 		
 		inicio=System.currentTimeMillis();
-		for(int i=0; i<999999; i++)
-			pol.evaluarRecursivaPar(2);	
-		System.out.println(pol.evaluarRecursivaPar(2));
+		for(int i=0; i<9999; i++)
+			pol.evaluarRecursivaPar(0.0001);	
+		//System.out.println(pol.evaluarRecursivaPar(0.0001));
 		fin=System.currentTimeMillis();
-		System.out.println("1000000 veces RecursivaPar Tardo "+(fin-inicio)+" milisegundos");
+		//System.out.println("1000000 veces RecursivaPar Tardo "+(fin-inicio)+" milisegundos");
+		System.out.println(fin-inicio);
 		
 		inicio=System.currentTimeMillis();
-		for(int i=0; i<999999; i++)
-			pol.evaluarHorner(2);
-		System.out.println(pol.evaluarHorner(2));
+		for(int i=0; i<9999; i++)
+			pol.evaluarHorner(0.0001);
+		//System.out.println(pol.evaluarHorner(0.0001));
 		fin=System.currentTimeMillis();
-		System.out.println("1000000 veces Algoritmo de Horner Tardo "+(fin-inicio)+" milisegundos");
+		//System.out.println("1000000 veces Algoritmo de Horner Tardo "+(fin-inicio)+" milisegundos");
+		System.out.println(fin-inicio);
 		
 		inicio=System.currentTimeMillis();
-		for(int i=0; i<999999; i++)
-			pol.evaluarPow(2);
-		System.out.println(pol.evaluarPow(2));
+		for(int i=0; i<9999; i++)
+			pol.evaluarPow(0.0001);
+		//System.out.println(pol.evaluarPow(0.0001));
 		fin=System.currentTimeMillis();
-		System.out.println("1000000 veces evaluarPow Tardo "+(fin-inicio)+" milisegundos");
+		//System.out.println("1000000 veces evaluarPow Tardo "+(fin-inicio)+" milisegundos");
+		System.out.println(fin-inicio);
 		
 		inicio=System.currentTimeMillis();
-		for(int i=0; i<999999; i++)
-			pol.evaluarMSucesivas(2);
-		System.out.println(pol.evaluarMSucesivas(2));
+		for(int i=0; i<9999; i++)
+			pol.evaluarMSucesivas(0.0001);
+		//System.out.println(pol.evaluarMSucesivas(0.0001));
 		fin=System.currentTimeMillis();
-		System.out.println("1000000 veces Multiplicaciones sucesivas Tardo "+(fin-inicio)+" milisegundos");
-	
-		inicio=System.currentTimeMillis();
-		for(int i=0; i<999999; i++)
-			pol.evaluarProgDinamica(2);
-		System.out.println(pol.evaluarProgDinamica(2));
-		fin=System.currentTimeMillis();
-		System.out.println("1000000 veces evaluarProgDinamica Tardo "+(fin-inicio)+" milisegundos");
-	
-		inicio=System.currentTimeMillis();
-		for(int i=0; i<999999; i++)
-			pol.evaluarMejorada(2);
-		System.out.println(pol.evaluarMejorada(2));
-		fin=System.currentTimeMillis();
-		System.out.println("1000000 veces evaluarMejorada Tardo "+(fin-inicio)+" milisegundos");
+		//System.out.println("1000000 veces Multiplicaciones sucesivas Tardo "+(fin-inicio)+" milisegundos");
+		System.out.println(fin-inicio);
 		
+		inicio=System.currentTimeMillis();
+		for(int i=0; i<9999; i++)
+			pol.evaluarProgDinamica(0.0001);
+		//System.out.println(pol.evaluarProgDinamica(0.0001));
+		fin=System.currentTimeMillis();
+		//System.out.println("1000000 veces evaluarProgDinamica Tardo "+(fin-inicio)+" milisegundos");
+		System.out.println(fin-inicio);
+		
+		inicio=System.currentTimeMillis();
+		for(int i=0; i<9999; i++)
+			pol.evaluarMejorada(0.0001);
+		//System.out.println(pol.evaluarMejorada(0.0001));
+		fin=System.currentTimeMillis();
+		//System.out.println("1000000 veces evaluarMejorada Tardo "+(fin-inicio)+" milisegundos");
+		System.out.println(fin-inicio);
 		
 		
 		
