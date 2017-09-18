@@ -108,7 +108,7 @@ public class Polinomio {
 
 		for (int i = 0; i < longitud; i++) {
 
-			resultado += this.coeficientes[i] * potencia(x, aux);
+			resultado += this.coeficientes[i] * potenciaP(x, aux);
 			aux--;
 		}
 		resultado += this.coeficientes[this.grado];
@@ -125,7 +125,7 @@ public class Polinomio {
 			return x;
 
 		if (grado % 2 == 0)
-			r = potenciaP(x, grado / 2);
+			r = potenciaP(x*x, grado / 2);
 		else
 			r = x * potenciaP(x, grado - 1);
 
@@ -156,11 +156,16 @@ public class Polinomio {
 
 		double[] vect=new double[this.grado+1];
 		vect[0]=1;
+		
 		for (int i=1;i<this.grado+1;i++)
 			vect[i]=vect[i-1]*x;
+
 		double acum = 0;
+		
 		for (int i = 0; i <= this.grado; i++)
+			
 			acum+=vect[this.grado-i]* (this.coeficientes[i]);
+		
 		return acum;
 	}
 
@@ -183,7 +188,7 @@ public class Polinomio {
 		long inicio;
 		long fin;
 		
-		CreaArchivo archivo = new CreaArchivo(1000,"polinomio1.in");
+		CreaArchivo archivo = new CreaArchivo(800,"polinomio1.in");
 		archivo.crear();
 				
 		Polinomio pol=new Polinomio("polinomio1.in");
@@ -192,59 +197,59 @@ public class Polinomio {
 		inicio=System.currentTimeMillis();
 		for(int i=0; i<9999; i++)
 			pol.evaluarRecursiva(0.0001);
-		//System.out.println(pol.evaluarRecursiva(0.0001));
-		fin=System.currentTimeMillis();
-		//System.out.println("1000000 veces Recursiva Tardo "+(fin-inicio)+" milisegundos");
-		System.out.println(fin-inicio);
+		//System.out.println(pol.evaluarRecursiva(2));
+		fin=System.currentTimeMillis(); 
+		System.out.println("Recursiva Tardo \t"+(fin-inicio)+" milisegundos");
+		//System.out.println(fin-inicio);
 		
 		inicio=System.currentTimeMillis();
 		for(int i=0; i<9999; i++)
 			pol.evaluarRecursivaPar(0.0001);	
-		//System.out.println(pol.evaluarRecursivaPar(0.0001));
+		//System.out.println(pol.evaluarRecursivaPar(2));
 		fin=System.currentTimeMillis();
-		//System.out.println("1000000 veces RecursivaPar Tardo "+(fin-inicio)+" milisegundos");
-		System.out.println(fin-inicio);
+		System.out.println("RecursivaPar Tardo \t"+(fin-inicio)+" milisegundos");
+		//System.out.println(fin-inicio);
 		
-		inicio=System.currentTimeMillis();
-		for(int i=0; i<9999; i++)
-			pol.evaluarHorner(0.0001);
-		//System.out.println(pol.evaluarHorner(0.0001));
-		fin=System.currentTimeMillis();
-		//System.out.println("1000000 veces Algoritmo de Horner Tardo "+(fin-inicio)+" milisegundos");
-		System.out.println(fin-inicio);
+//		inicio=System.currentTimeMillis();
+//		for(int i=0; i<99999; i++)
+//			pol.evaluarHorner(0.001);
+//		//System.out.println(pol.evaluarHorner(0.0001));
+//		fin=System.currentTimeMillis();
+//		System.out.println("Horner Tardo       \t"+(fin-inicio)+" milisegundos");
+//		//System.out.println(fin-inicio);
 		
-		inicio=System.currentTimeMillis();
-		for(int i=0; i<9999; i++)
-			pol.evaluarPow(0.0001);
-		//System.out.println(pol.evaluarPow(0.0001));
-		fin=System.currentTimeMillis();
-		//System.out.println("1000000 veces evaluarPow Tardo "+(fin-inicio)+" milisegundos");
-		System.out.println(fin-inicio);
+//		inicio=System.currentTimeMillis();
+//		for(int i=0; i<99999; i++)
+//			pol.evaluarPow(0.001);
+//		//System.out.println(pol.evaluarPow(0.0001));
+//		fin=System.currentTimeMillis();
+//		System.out.println("evaluarPow Tardo \t"+(fin-inicio)+" milisegundos");
+//		//System.out.println(fin-inicio);
+//		
+//		inicio=System.currentTimeMillis();
+//		for(int i=0; i<99999; i++)
+//			pol.evaluarMSucesivas(0.001);
+//		//System.out.println(pol.evaluarMSucesivas(0.0001));
+//		fin=System.currentTimeMillis();
+//		System.out.println("Msucesivas Tardo\t "+(fin-inicio)+" milisegundos");
+//		//System.out.println(fin-inicio);
 		
-		inicio=System.currentTimeMillis();
-		for(int i=0; i<9999; i++)
-			pol.evaluarMSucesivas(0.0001);
-		//System.out.println(pol.evaluarMSucesivas(0.0001));
-		fin=System.currentTimeMillis();
-		//System.out.println("1000000 veces Multiplicaciones sucesivas Tardo "+(fin-inicio)+" milisegundos");
-		System.out.println(fin-inicio);
+//		inicio=System.currentTimeMillis();
+//		for(int i=0; i<99999; i++)
+//			pol.evaluarProgDinamica(0.001);
+//		//System.out.println(pol.evaluarProgDinamica(0.0001));
+//		fin=System.currentTimeMillis();
+//		System.out.println("eProgDinamica Tardo \t"+(fin-inicio)+" milisegundos");
+//		//System.out.println(fin-inicio);
 		
-		inicio=System.currentTimeMillis();
-		for(int i=0; i<9999; i++)
-			pol.evaluarProgDinamica(0.0001);
-		//System.out.println(pol.evaluarProgDinamica(0.0001));
-		fin=System.currentTimeMillis();
-		//System.out.println("1000000 veces evaluarProgDinamica Tardo "+(fin-inicio)+" milisegundos");
-		System.out.println(fin-inicio);
-		
-		inicio=System.currentTimeMillis();
-		for(int i=0; i<9999; i++)
-			pol.evaluarMejorada(0.0001);
-		//System.out.println(pol.evaluarMejorada(0.0001));
-		fin=System.currentTimeMillis();
-		//System.out.println("1000000 veces evaluarMejorada Tardo "+(fin-inicio)+" milisegundos");
-		System.out.println(fin-inicio);
-		
+//		inicio=System.currentTimeMillis();
+//		for(int i=0; i<99999; i++)
+//			pol.evaluarMejorada(0.001);
+//		//System.out.println(pol.evaluarMejorada(0.0001));
+//		fin=System.currentTimeMillis();
+//		System.out.println("evaluarMejorada Tardo \t"+(fin-inicio)+" milisegundos");
+//		//System.out.println(fin-inicio);
+//		
 		
 		
 //		BinomioDeNewton bin=new BinomioDeNewton(1, 1, 3);

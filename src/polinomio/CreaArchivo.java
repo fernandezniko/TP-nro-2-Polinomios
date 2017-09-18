@@ -26,6 +26,7 @@ public class CreaArchivo {
 
 			
 		salida.println(this.grado);
+		
 		for(int i=0;i<this.grado;i++) {
 				
 			double random = new Random().nextDouble();
