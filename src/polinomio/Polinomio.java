@@ -85,7 +85,7 @@ public class Polinomio {
 
 		for (int i = 0; i < longitud; i++) {
 
-			resultado += this.coeficientes[i] * potencia(x, aux);
+			resultado += this.coeficientes[i] * potenciaP(x, aux);
 			aux--;
 		}
 		resultado += this.coeficientes[this.grado];
@@ -102,7 +102,7 @@ public class Polinomio {
 			return x;
 
 		if (grado % 2 == 0)
-			r = potenciaP(x, grado / 2);
+			r = potenciaP(x*x, grado / 2);
 		else
 			r = x * potenciaP(x, grado - 1);
 
