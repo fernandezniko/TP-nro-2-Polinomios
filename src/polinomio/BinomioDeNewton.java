@@ -15,6 +15,20 @@ public class BinomioDeNewton {
 			return n * factorial(n-1) ;
 	}
 
+
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	public BinomioDeNewton(double ax, double b, int n){
 		this.ax=ax;
@@ -31,6 +45,7 @@ public class BinomioDeNewton {
 	}
 	
 	
+	
 	public double[] desarrollarPolinomio() {
 		double[] coef=new double[this.n+1];
 		
@@ -38,6 +53,29 @@ public class BinomioDeNewton {
 			coef[this.n-i]=this.obtenerCoeficiente(i);
 		}
 		return coef;
+	}
+	
+	public double[] desarrollarPolinomioConPascal() {
+	
+		int[][] mat = new int[this.n+1][this.n+1];
+		double[] coef=new double[this.n+1];
+		
+		for(int i=0;i<=this.n;i++) {
+			for(int j=0;j<=i;j++) {
+				if(i==0||j==0||j==i)
+					mat[i][j]=1;
+				else
+					mat[i][j]=mat[i-1][j]+mat[i-1][j-1];
+			}
+		}
+		
+		for (int i=0;i<=this.n;i++) {
+			coef[this.n-i]=mat[this.n][i]*Math.pow(this.ax,i)*(Math.pow(this.b,this.n-i));
+		}	
+		
+		return coef;
+		
+		
 	}
 	
 	public double evaluarEnX(double x){

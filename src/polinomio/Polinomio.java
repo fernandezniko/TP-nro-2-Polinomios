@@ -225,6 +225,10 @@ public class Polinomio {
 			System.out.print(coefi[i]+" ");
 		}
 		
+		
+		double[] coefi2;
+		
+		
 		BinomioDeNewton bin2=new BinomioDeNewton(2, 4, 3);
 		System.out.println();
 		coefi=bin2.desarrollarPolinomio();
@@ -232,12 +236,31 @@ public class Polinomio {
 			System.out.print(coefi[i]+" ");
 		}
 		
+		System.out.println();
+		
+		coefi2=bin2.desarrollarPolinomioConPascal();
+		for(int i=0;i<coefi.length;i++) {
+			System.out.print(coefi2[i]+" ");
+		}
+		
+		
+		
+		
 		Polinomio pol32=new Polinomio(3, coef);
 		pol32.coeficientes=bin2.desarrollarPolinomio();
 		System.out.println("\n"+bin2.evaluarEnX(5));
 		System.out.println(pol32.evaluarHorner(5));
 		
 		
+		bin2=new BinomioDeNewton(2, 4, 9);
+		
+		pol32.coeficientes=bin2.desarrollarPolinomio();
+		System.out.println(pol32.evaluarHorner(5));
+		
+		pol32.coeficientes=bin2.desarrollarPolinomioConPascal();
+		System.out.println(pol32.evaluarHorner(5));
+		
+
 		
 		
 		
