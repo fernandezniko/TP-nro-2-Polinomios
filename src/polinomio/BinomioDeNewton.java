@@ -83,7 +83,16 @@ public class BinomioDeNewton {
 		
 	}
 	
-	
+	public double combinatoriaRecursiva(int n , int k){
+		
+		if(k > n)
+			return 0 ;
+		if(k == 0 || k == n)
+			return 1 ;
+		else
+			return combinatoriaRecursiva(n - 1 , k - 1) + combinatoriaRecursiva(n - 1, k) ;
+		
+	}
 	
 	
 
